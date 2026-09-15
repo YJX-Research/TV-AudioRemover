@@ -195,6 +195,19 @@
             outline-offset: 3px;
         }
 
+        .playback-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .playback-hint {
+            color: #777;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
         .video-grid {
             display: flex;
             flex-wrap: wrap;
@@ -398,6 +411,77 @@
             opacity: 0.62;
         }
 
+        /* Compact video gallery and in-video labels */
+        .demo-container-bg {
+            padding: 24px;
+        }
+
+        .demo-box {
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+
+        .row-box {
+            padding: 12px;
+            margin-bottom: 10px;
+            gap: 8px;
+        }
+
+        .video-container {
+            gap: 8px;
+            padding: 10px;
+        }
+
+        .video-grid,
+        .video-grid1,
+        .video-grid2,
+        .inner-demo-grid {
+            gap: 6px;
+        }
+
+        .demo-block {
+            height: 130px;
+        }
+
+        .demo-info {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: auto;
+            height: auto;
+            min-height: 22px;
+            padding: 3px 6px;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.42));
+            color: #fff;
+            pointer-events: none;
+        }
+
+        .demo-info h3,
+        .demo-block:hover .demo-info h3 {
+            color: #fff;
+            font-size: 0.78em;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (max-width: 700px) {
+            .demo-container-bg {
+                padding: 12px;
+            }
+
+            .demo-box {
+                padding: 12px;
+            }
+
+            .demo-block {
+                width: min(250px, 100%);
+            }
+        }
+
         /* Footer Styles */
         footer {
             text-align: center;
@@ -512,7 +596,7 @@
 
         <!-- Demo Section -->
         <section id="demos">
-            <h2>Samples</h2>
+            <h2>Samples for Remove Task</h2>
             <div class="demo-container-bg">
                 <div class="demo-grid">
                     <!-- Box 1 -->
@@ -529,7 +613,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -643,7 +730,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -757,7 +847,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -871,7 +964,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -985,7 +1081,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1099,7 +1198,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1213,7 +1315,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1327,7 +1432,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1441,7 +1549,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1555,7 +1666,10 @@
 
                         <!-- Row 1 -->
                         <div class="row-box">
-                            <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                            <div class="playback-control">
+                                <button class="row-title" type="button" aria-pressed="false" onclick="toggleRowPlayback(this)">Play all muted</button>
+                                <span class="playback-hint">Hover over a video to hear its audio.</span>
+                            </div>
                             <div class="content-container">
                                 <div class="prompt-container">
                                     <div class="demo-block">
@@ -1736,6 +1850,12 @@
             var videos = Array.from(row.querySelectorAll('video'));
             var isPlaying = button.getAttribute('aria-pressed') === 'true';
 
+            function setControlsVisible(visible) {
+                videos.forEach(function(video) {
+                    video.controls = visible;
+                });
+            }
+
             videos.forEach(function(video) {
                 video.muted = true;
             });
@@ -1744,6 +1864,8 @@
                 videos.forEach(function(video) {
                     video.pause();
                 });
+                row.classList.remove('sync-playing');
+                setControlsVisible(true);
                 button.setAttribute('aria-pressed', 'false');
                 button.textContent = 'Play all muted';
                 return;
@@ -1755,9 +1877,12 @@
             Promise.all(videos.map(function(video) {
                 return video.play();
             })).then(function() {
+                row.classList.add('sync-playing');
                 button.setAttribute('aria-pressed', 'true');
                 button.textContent = 'Stop all';
             }).catch(function() {
+                row.classList.remove('sync-playing');
+                setControlsVisible(true);
                 button.setAttribute('aria-pressed', 'false');
                 button.textContent = 'Play all muted';
             });
@@ -1774,6 +1899,8 @@
                         Promise.all(videos.map(function(item) {
                             return item.play();
                         })).catch(function() {
+                            row.classList.remove('sync-playing');
+                            setControlsVisible(true);
                             button.setAttribute('aria-pressed', 'false');
                             button.textContent = 'Play all muted';
                         });
@@ -1794,6 +1921,10 @@
                         videos.forEach(function(item) {
                             item.pause();
                         });
+                        row.classList.remove('sync-playing');
+                        videos.forEach(function(item) {
+                            item.controls = true;
+                        });
                         button.setAttribute('aria-pressed', 'false');
                         button.textContent = 'Play all muted';
                     }
@@ -1801,8 +1932,13 @@
                 });
             });
 
-            blocks.forEach(function(block) {
-                block.addEventListener('mouseenter', function() {
+                blocks.forEach(function(block) {
+                    block.addEventListener('mouseenter', function() {
+                    if (button.getAttribute('aria-pressed') === 'true') {
+                        videos.forEach(function(video) {
+                            video.controls = false;
+                        });
+                    }
                     blocks.forEach(function(otherBlock) {
                         otherBlock.classList.toggle('video-dimmed', otherBlock !== block);
                     });
@@ -1812,6 +1948,11 @@
                 });
 
                 block.addEventListener('mouseleave', function() {
+                    if (button.getAttribute('aria-pressed') === 'true') {
+                        videos.forEach(function(video) {
+                            video.controls = true;
+                        });
+                    }
                     blocks.forEach(function(otherBlock) {
                         otherBlock.classList.remove('video-dimmed');
                     });
