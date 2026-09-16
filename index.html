@@ -581,7 +581,7 @@
                 <p style="padding-left:1.5em;">With task tokens and global modal guidance, the model effectively distinguishes preservable and suppressible audio under joint visual-textual conditions.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>A multi-task curriculum training strategy.</strong></p>
                 <p style="padding-left:1.5em;">Combined multi-task supervision and two-stage curriculum learning enhances task understanding and fine-grained acoustic discrimination capacity.</p>
-                <p style="padding-left:1.5em;">&#8226; <strong>AV-Remove Bench.</strong></p>
+                <p style="padding-left:1.5em;">&#8226; <strong>AV-Remove-Bench.</strong></p>
                 <p style="padding-left:1.5em;">the first audio-visual target removal benchmark with comprehensive scene diversity and broad acoustic coverage, equipped with dedicated objective metrics and an MLLM-based evaluation protocol.</p>
                 <p>Extensive experiments demonstrate that TV-AudioRemover achieves state-of-the-art performance on both subjective and objective metrics. </p>
             </div>
@@ -1789,7 +1789,7 @@
             <div id="perf-tab-objective" class="perf-tab">
                 <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                     <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                        <p>We compare TV-AudioRemover with three categories of models on the AV-Remove Bench: joint audio-visual editing models (AVI-Edit, InstructAV2AV); text-guided audio editing models (ZETA, Audio-Omni, UNISON); and video- and text-guided audio extraction model (SAM Audio).</p>
+                        <p>We compare TV-AudioRemover with three categories of models on the AV-Remove-Bench: joint audio-visual editing models (AVI-Edit, InstructAV2AV); text-guided audio editing models (ZETA, Audio-Omni, UNISON); and video- and text-guided audio extraction model (SAM Audio).</p>
                     </div>
                     <div style="text-align:center;">
                         <img src="Figs/objective.png" alt="objective" style="border:none; outline:none; box-shadow:none; padding:0; max-width:90%; height:auto;">
@@ -1802,7 +1802,7 @@
             <div id="perf-tab-subjective" class="perf-tab" style="display:none;">
                     <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                     <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                        <p>We further conduct a human listening evaluation on the AV-Remove Bench to compare against the baseline models.</p>
+                        <p>We further conduct a human listening evaluation on the AV-Remove-Bench to compare against the baseline models.</p>
                     </div>
                     <div style="text-align:center;">
                         <img src="Figs/subjective.png" alt="subjective" style="border:none; outline:none; box-shadow:none; padding:0; max-width:70%; height:auto;">
@@ -1970,12 +1970,12 @@
         <!-- Benchmark Section -->
         <section id="benchmark" style="margin-bottom: 40px;">
             <h2 style="text-align: center; font-size: 2.2em; font-weight: 600; margin-bottom: 20px; color: #4a4a4a; position: relative; padding-bottom: 12px;">
-                AV-Remove Bench
+                AV-Remove-Bench
                 <span style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100px; height:3px; background:linear-gradient(90deg,#b8a090,#c8b0a0); border-radius:2px; display:block;"></span>
             </h2>
             <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                 <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                    <p>We propose AV-Remove Bench, a comprehensive audio-visual object removal benchmark with 77 samples. All samples are audio-visual clips of about six seconds, covering speech, music, and sound effects.
+                    <p>We propose AV-Remove-Bench, a comprehensive audio-visual object removal benchmark with 77 samples. All samples are audio-visual clips of about six seconds, covering speech, music, and sound effects.
                        Each sample falls into either a multi-sounding-object setting or a foreground-target-plus-stable-background setting, and the goal is to remove a specified sounding object from both the visual and audio streams.</p>
                 </div>
             </div>
