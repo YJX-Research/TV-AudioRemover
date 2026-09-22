@@ -482,6 +482,169 @@
             }
         }
 
+        .resource-links {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        .resource-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 26px;
+            background: #1a1a1a;
+            border: 1px solid #1a1a1a;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.4em;
+            font-weight: 600;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+
+        .resource-button:hover {
+            background: #333333;
+            transform: translateY(-1px);
+        }
+
+        .resource-button-disabled {
+            background: #f3f4f6;
+            border-color: #d8dbe0;
+            color: #555b66;
+            box-shadow: none;
+            cursor: default;
+        }
+
+        .resource-button-disabled:hover {
+            background: #f3f4f6;
+            transform: none;
+        }
+
+        .resource-icon {
+            width: 26px;
+            height: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .arxiv-icon {
+            color: #b31b1b;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .citation-placeholder,
+        .credits-card {
+            background: linear-gradient(135deg, #fbfaf8 0%, #f3f0ec 100%);
+            border: 1px solid #e5dfd8;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
+
+        .citation-placeholder {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 24px;
+            color: #77716c;
+            font-size: 1.1em;
+        }
+
+        .credits-card {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 28px 32px;
+            text-align: left;
+        }
+
+        .credits-card h3 {
+            margin: 0 0 8px;
+            color: #333333;
+            font-size: 1.2em;
+        }
+
+        .credits-card p {
+            margin: 0 0 20px;
+            color: #575757;
+        }
+
+        .dataset-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 12px 0 22px;
+        }
+
+        .dataset-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 11px;
+            background: #ffffff;
+            border: 1px solid #ded8d1;
+            border-radius: 999px;
+            color: #404040;
+            white-space: nowrap;
+        }
+
+        .license-tag {
+            color: #76695f;
+            font-size: 0.82em;
+        }
+
+        .dataset-citations {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid #ddd6cf;
+        }
+
+        .dataset-citations summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .dataset-citation-note {
+            margin: 10px 0 14px !important;
+            font-size: 0.95em;
+            color: #6b625c !important;
+        }
+
+        .bibtex-block {
+            margin: 10px 0 6px;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 1px solid #e3ddd6;
+            border-radius: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+            font-size: 0.9em;
+            line-height: 1.5;
+            color: #333333;
+        }
+
+        .copy-button {
+            margin: 0 0 14px;
+            padding: 6px 11px;
+            border: 1px solid #cfc7bf;
+            border-radius: 7px;
+            background: #ffffff;
+            color: #4a4541;
+            cursor: pointer;
+        }
+
         /* Footer Styles */
         footer {
             text-align: center;
@@ -523,22 +686,22 @@
                 <span style="font-size: 1.0em; color: #777;">*Equal contribution &nbsp;&nbsp; †Corresponding author</span>
             </div>
 
-            <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 18px; width: 100%;">
+            <div class="resource-links">
                 <!-- arXiv -->
-                <a href="https://arxiv.org/abs/xxx" target="_blank" style="display:inline-flex; align-items:center; gap:9px; padding:10px 26px; background:#1a1a1a; border:none; border-radius:999px; text-decoration:none; color:#ffffff; font-family:Helvetica,Arial,sans-serif; font-size:1.4em; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:all 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#1a1a1a'">
-                    <svg height="26" width="26" viewBox="0 0 448 512" fill="currentColor" style="flex-shrink:0;"><path d="M62.258 8.006a22.22 22.22 0 0 0-20.929 13.448c-3.404 8.169-.96 13.898 6.506 24.59c10.935 16.09 122.178 149.673 122.178 149.673l-24.619 23.038c-20.74 20.735-21.632 48.566-2.34 67.852l28.663 27.3l-79.976 98.235c-6.21 6.614-10.053 18.221-6.585 26.552a22.7 22.7 0 0 0 21.21 14.06a20.23 20.23 0 0 0 15.249-7.536l95.122-88.437L363.33 496.39a27.14 27.14 0 0 0 18.418 7.61a25.3 25.3 0 0 0 7.335-1.108a27.66 27.66 0 0 0 18.4-18.99a25.6 25.6 0 0 0-6.481-23.69L272.219 305.195l23.062-21.443c17.198-15.504 17.29-42.455.197-58.076l-25.257-24.228L357.417 98.46l.115-.133l.103-.14c7.793-10.123 11.52-17.92 7.502-27.806a36.17 36.17 0 0 0-23.647-18.37a24 24 0 0 0-3.166-.212l-.006.018a28.52 28.52 0 0 0-18.252 8.123l-.203.166l-.19.173L218.6 151.925L79.261 18.253S70.995 8.213 62.258 8.006m276.06 51.214q1.115.004 2.22.148a29.3 29.3 0 0 1 17.719 13.81c2.246 5.523 1.554 10.01-6.506 20.484L264.861 196.3l-40.882-39.22l100.68-91.304a21.77 21.77 0 0 1 13.66-6.536zM175.077 201.127L395.19 464.872c4.32 5.408 7.02 10.818 5.18 16.914a20.25 20.25 0 0 1-13.463 14.037a17.6 17.6 0 0 1-5.17.784a19.8 19.8 0 0 1-13.293-5.56l-220.15-209.694c-17.317-17.316-14.698-40.33 2.158-57.186z"/></svg>
-                    arXiv 
-                </a>
+                <span class="resource-button resource-button-disabled" aria-disabled="true" title="arXiv link will be added after release">
+                    <span class="resource-icon arxiv-icon" aria-hidden="true">aX</span>
+                    arXiv (Coming Soon)
+                </span>
                 <!-- GitHub -->
-                <a href="https://github.com/PixCtrol/TV-AudioRemover" target="_blank" style="display:inline-flex; align-items:center; gap:9px; padding:10px 26px; background:#1a1a1a; border:none; border-radius:999px; text-decoration:none; color:#ffffff; font-family:Helvetica,Arial,sans-serif; font-size:1.4em; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:all 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#1a1a1a'">
+                <a href="https://github.com/PixCtrol/TV-AudioRemover" target="_blank" class="resource-button">
                     <svg height="26" width="26" viewBox="0 0 16 16" fill="currentColor" style="flex-shrink:0;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                    Code (Coming Soon)
+                    Code
                 </a>
-                <!-- HuggingFace 1 -->
-                <a href="xxx" target="_blank" style="display:inline-flex; align-items:center; gap:9px; padding:10px 26px; background:#1a1a1a; border:none; border-radius:999px; text-decoration:none; color:#ffffff; font-family:Helvetica,Arial,sans-serif; font-size:1.4em; font-weight:600; box-shadow:0 2px 6px rgba(0,0,0,0.2); transition:all 0.2s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#1a1a1a'">
+                <!-- Hugging Face -->
+                <span class="resource-button resource-button-disabled" aria-disabled="true" title="Model weights will be added after release">
                     <svg height="26" width="26" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path fill="currentColor" d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378c0 1.112.178 2.181.503 3.185c.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284c.278.173.48.408.71.694c.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542c.01.026.653 1.552 1.657 2.54c.616.605 1.01 1.223 1.082 1.912c.055.537-.096 1.059-.38 1.572c.637.121 1.294.187 1.967.187c.657 0 1.298-.063 1.921-.178c-.287-.517-.44-1.041-.384-1.581c.07-.69.465-1.307 1.081-1.913c1.004-.987 1.647-2.513 1.657-2.539c.021-.074.083-.285.233-.542c.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952c.23-.286.432-.52.71-.694c.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174a1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094c-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71c-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013a1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921a.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92a.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164c1.607-.007 2.984-1.155 3.572-1.164c.196-.003.305.12.305.454c0 .886-.424 2.328-1.563 3.202c-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026l-.01.008l-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116a1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243a1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444c-.034-.016-.104-.008-.2.022q-.094.03-.216.087q-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096a3 3 0 0 0-.26.219a2 2 0 0 0-.12.121a2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203c0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194c-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858s-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64c-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647s2.822 2.813 2.562 3.244s-1.176-.506-1.176-.506s-2.866-2.567-3.49-1.898s.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405c-.238.839-2.71-1.587-3.216-.642c-.506.946 3.49 2.056 3.522 2.064c1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194c1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858s.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64c.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647s-2.822 2.813-2.562 3.244s1.176-.506 1.176-.506s2.866-2.567 3.49-1.898s-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405c.238.839 2.71-1.587 3.216-.642c.506.946-3.49 2.056-3.522 2.064c-1.29.33-4.568 1.028-5.713-.624"/></svg>
                     Model (Coming Soon)
-                </a>
+                </span>
             </div>
         </header>
 
@@ -552,8 +715,9 @@
                 <p>Visual object removal can eliminate a target from video frames, yet its acoustic trace persists in the soundtrack, causing obvious audio-visual inconsistency. Existing video inpainting models operate solely on pixels, while audio editing models, especially for the sound removal task, are typically driven by text and therefore rely on limited single-modal control, which is less effective than multimodal guidance that provides stronger semantic grounding and temporal synchronization cues. 
                    We present Text‑Visual Guided Sound Removal (TV-AudioRemover), a target sound removal framework that leverages the visually edited video together with a natural-language instruction to suppress the sound associated with the removed visual object from the original audio mixture. 
                    (1) To acquire high-quality training data, we devise a pipeline to construct a million-scale dataset of single-object audio-visual aligned samples, from which we synthesize mixture-target pairs customized for model training. 
-                   (2) To effectively leverage visual context and follow instruction intent, we augment the model architecture with task tokens, generalizable instruction modeling, and modality-specific global guidance. 
+                   (2) To effectively leverage visual context and follow instruction intent, we augment the model architecture with task tokens, generalizable instruction modeling, and modality-specific global guidance.
                    (3) We further adopt multi-task training to strengthen task-role comprehension, and employ a hard-mixture curriculum that leverages semantically similar acoustic mixtures during fine-tuning to enhance fine-grained source discrimination.
+                   Beyond visually edited videos, the same selective sound-removal capability can support off-screen voice-over or narration cleanup, text-guided audio-only editing, and soundtrack-only removal of an in-frame sound from an otherwise unedited video.
                 </p>
             </div>
             <div class="image-gallery">
@@ -567,7 +731,7 @@
         </section>
 
         <!-- Main contributions Section -->
-        <section id="main-contibutions" style="margin-bottom: 40px;">
+        <section id="main-contributions" style="margin-bottom: 40px;">
             <h2 style="text-align: center; font-size: 2.2em; font-weight: 600; margin-bottom: 20px; color: #4a4a4a; position: relative; padding-bottom: 12px;">
                 Main Contributions
                 <span style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100px; height:3px; background:linear-gradient(90deg,#b8a090,#c8b0a0); border-radius:2px; display:block;"></span>
@@ -582,7 +746,7 @@
                 <p style="padding-left:1.5em;">&#8226; <strong>A multi-task curriculum training strategy.</strong></p>
                 <p style="padding-left:1.5em;">Combined multi-task supervision and two-stage curriculum learning enhances task understanding and fine-grained acoustic discrimination capacity.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>AV-Remove-Bench.</strong></p>
-                <p style="padding-left:1.5em;">the first audio-visual target removal benchmark with comprehensive scene diversity and broad acoustic coverage, equipped with dedicated objective metrics and an MLLM-based evaluation protocol.</p>
+                <p style="padding-left:1.5em;">The first audio-visual target removal benchmark with comprehensive scene diversity and broad acoustic coverage, equipped with two removal-specific metrics introduced in this work—Target Source Suppression Ratio (TSSR) and Preserved Source Fidelity (PSF)—and an MLLM-based evaluation protocol.</p>
                 <p>Extensive experiments demonstrate that TV-AudioRemover achieves state-of-the-art performance on both subjective and objective metrics. </p>
             </div>
             <div class="image-gallery">
@@ -1983,46 +2147,76 @@
 
         <!-- Citations Section -->
         <section id="citations" style="margin-top: 20px;">
-            <h2 style="font-size: 2.2em; font-weight: 600; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">Citation</h2>
-            <pre style="background: linear-gradient(135deg, #f8f6f4 0%, #f0ede8 100%); border: 1px solid rgba(255,255,255,0.9); border-radius: 12px; padding: 20px 24px; font-size: 1.3em; line-height: 1.3; overflow-x: auto; color: #333; font-family: Helvetica, Arial, sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.04);">
-@misc{xxx 
-}</pre></section>
-        <!-- Footer -->
-        <!-- <footer>
-            <p>&copy; 2026 ControlFoley Project. All Rights Reserved.</p>
-        </footer> -->
-        <footer style="text-align: center; padding: 25px 20px; font-size: 14px; color: #555; background: #f8f9fa; border-top: 1px solid #e9ecef;">
-            <div style="max-width: 900px; margin: 0 auto; line-height: 1.6;">
-                <p style="margin: 0 0 4px 0; font-weight: bold;">Data & Acknowledgments</p>
-                <p style="margin: 0;">
-                    This demo project uses the following datasets:<br>
-                    VGGSound (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color:#007bff; text-decoration:none;">CC BY 4.0</a>), AVSpeech (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" style="color:#007bff; text-decoration:none;">CC BY 4.0</a>), and MUSIC-Duet<sup><a href="#ref-musicduet" style="color:#007bff; text-decoration:none;">1</a></sup>.
-                </p>
-                <p style="margin: 8px 0 0 0; font-size: 13px; color: #6c757d;">
-                    All resources are used for <strong>academic and non-commercial demonstration purposes only</strong>.
-                </p>
-            </div>
-            <div style="margin-top: 15px; border-top: 1px solid #e9ecef; padding-top: 15px; font-size: 13px;">
-                &copy; 2026 TV-AudioRemover Project. All Rights Reserved.
-            </div>
-        </footer>
+            <h2 style="text-align: center; font-size: 2.2em; font-weight: 600; margin-bottom: 20px; color: #4a4a4a; position: relative; padding-bottom: 12px;">
+                Citation
+                <span style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100px; height:3px; background:linear-gradient(90deg,#b8a090,#c8b0a0); border-radius:2px; display:block;"></span>
+            </h2>
+            <div class="citation-placeholder">BibTeX will be added after the arXiv release.</div>
+        </section>
 
-        <div style="margin-top:30px; text-align:center; padding:25px 20px; font-family:Helvetica, Arial, sans-serif; font-size:14px; line-height:1.6; color:#555; background:#f8f9fa; border-top:1px solid #e9ecef;">
-            <div style="max-width:900px; margin:0 auto;">
-            <h3 style="margin:0 0 12px; font-size:14px; font-weight:bold; color:#555;">References</h3>
-            <div id="ref-musicduet">
-            <div style="margin-bottom:6px; text-align:left; font-weight:bold; color:#555;">[1]</div>
-        <pre style="margin:0; padding:16px; box-sizing:border-box; background:#f8f9fa; border:1px solid #e9ecef; border-radius:8px; overflow-x:auto; text-align:left; white-space:pre-wrap; overflow-wrap:anywhere; font-family:Helvetica, Arial, sans-serif; font-size:13px; line-height:1.6; color:#333;">@InProceedings{zhao2018sound,
-  author    = {Zhao, Hang and Gan, Chuang and Rouditchenko, Andrew and Vondrick, Carl and McDermott, Josh and Torralba, Antonio},
+        <section id="data-acknowledgments" style="margin-top: 40px;">
+            <h2 style="text-align: center; font-size: 2.2em; font-weight: 600; margin-bottom: 20px; color: #4a4a4a; position: relative; padding-bottom: 12px;">
+                Data &amp; Acknowledgments
+                <span style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100px; height:3px; background:linear-gradient(90deg,#b8a090,#c8b0a0); border-radius:2px; display:block;"></span>
+            </h2>
+            <div class="credits-card">
+                <h3>Data sources</h3>
+                <p>We gratefully acknowledge the third-party datasets used for research, training-data construction, and evaluation.</p>
+                <div class="dataset-list">
+                    <span class="dataset-chip">VGGSound <a href="#dataset-ref-vggsound">[1]</a> <a class="license-tag" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+                    <span class="dataset-chip">AudioSet <a class="license-tag" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+                    <span class="dataset-chip">AVSpeech <a href="#dataset-ref-avspeech">[2]</a> <a class="license-tag" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+                    <span class="dataset-chip">Condensed Movies <a class="license-tag" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></span>
+                    <span class="dataset-chip">WavCaps <span class="license-tag">Research only</span></span>
+                    <span class="dataset-chip">ACAVCaps <a class="license-tag" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+                    <span class="dataset-chip">MUSIC-AVQA <a class="license-tag" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+                    <span class="dataset-chip">MUSIC-Duet <a href="#dataset-ref-musicduet">[3]</a></span>
+                    <span class="dataset-chip">AVSBench <a class="license-tag" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+                </div>
+
+                <h3>Usage note</h3>
+                <p>All third-party resources are used for academic and non-commercial demonstration purposes only. Please consult the original dataset pages for their complete licenses and terms.</p>
+
+                <h3>Acknowledgments</h3>
+                <p>This project is inspired by <a href="https://github.com/Stability-AI/stable-audio-tools" target="_blank">stable-audio-tools</a>, <a href="https://github.com/hkchengrex/MMAudio" target="_blank">MMAudio</a>, <a href="https://github.com/sony/mmaudiosep" target="_blank">MMAudioSep</a>, <a href="https://github.com/bytedance/Make-An-Audio-2" target="_blank">Make-An-Audio 2</a>, <a href="https://github.com/v-iashin/Synchformer" target="_blank">Synchformer</a>, and <a href="https://github.com/NVIDIA/BigVGAN" target="_blank">BigVGAN</a>. We thank their authors for making these resources available.</p>
+
+                <details class="dataset-citations">
+                    <summary>Dataset citations</summary>
+                    <p class="dataset-citation-note"><strong>Note:</strong> The references below credit datasets used by this project. They are not citations to TV-AudioRemover; the project citation will be added above after the arXiv release.</p>
+
+                    <div id="dataset-ref-vggsound"><strong>[1] VGGSound</strong></div>
+                    <pre class="bibtex-block">@inproceedings{chen2020vggsound,
+  title     = {VGGSound: A Large-Scale Audio-Visual Dataset},
+  author    = {Chen, Honglie and Xie, Weidi and Vedaldi, Andrea and Zisserman, Andrew},
+  booktitle = {IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year      = {2020}
+}</pre>
+                    <button onclick="copyBibtex(this)" class="copy-button">Copy BibTeX</button>
+
+                    <div id="dataset-ref-avspeech"><strong>[2] AVSpeech</strong></div>
+                    <pre class="bibtex-block">@article{ephrat2018looking,
+  title   = {Looking to Listen at the Cocktail Party: A Speaker-Independent Audio-Visual Model for Speech Separation},
+  author  = {Ephrat, Ariel and Mosseri, Inbar and Lang, Oran and Dekel, Tali and Wilson, Kevin and Hassidim, Avinatan and Freeman, William T. and Rubinstein, Michael},
+  journal = {ACM Transactions on Graphics},
+  year    = {2018}
+}</pre>
+                    <button onclick="copyBibtex(this)" class="copy-button">Copy BibTeX</button>
+
+                    <div id="dataset-ref-musicduet"><strong>[3] MUSIC-Duet / Sound of Pixels</strong></div>
+                    <pre class="bibtex-block">@inproceedings{zhao2018sound,
   title     = {The Sound of Pixels},
-  booktitle = {The European Conference on Computer Vision (ECCV)},
-  month     = {September},
+  author    = {Zhao, Hang and Gan, Chuang and Rouditchenko, Andrew and Vondrick, Carl and McDermott, Josh and Torralba, Antonio},
+  booktitle = {European Conference on Computer Vision (ECCV)},
   year      = {2018}
 }</pre>
-        <button onclick="copyBibtex(this)" style="margin:8px 0;cursor:pointer; padding:4px 10px;">Copy BibTeX</button>
+                    <button onclick="copyBibtex(this)" class="copy-button">Copy BibTeX</button>
+                </details>
             </div>
-            </div>
-        </div>
+        </section>
+
+        <footer>
+            &copy; 2026 TV-AudioRemover Project. All Rights Reserved.
+        </footer>
 
         <script>
         function copyBibtex(btn){
