@@ -704,11 +704,11 @@
                 <span style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:100px; height:3px; background:linear-gradient(90deg,#b8a090,#c8b0a0); border-radius:2px; display:block;"></span>
             </h2>
             <div class="text-box">
-                <p>Visual object removal can eliminate a target from video frames, yet its acoustic trace persists in the soundtrack, causing obvious audio-visual inconsistency. Existing video inpainting models operate solely on pixels, while audio editing models, especially for the sound removal task, are typically driven by text and therefore rely on limited single-modal control, which is less effective than multimodal guidance that provides stronger semantic grounding and temporal synchronization cues. 
-                   We present Text‑Visual Guided Sound Removal (TV-AudioRemover), a target sound removal framework that leverages the visually edited video together with a natural-language instruction to suppress the sound associated with the removed visual object from the original audio mixture. 
-                   (1) To acquire high-quality training data, we devise a pipeline to construct a million-scale dataset of single-object audio-visual aligned samples, from which we synthesize mixture-target pairs customized for model training. 
-                   (2) To effectively leverage visual context and follow instruction intent, we augment the model architecture with task tokens, generalizable instruction modeling, and modality-specific global guidance.
-                   (3) We further adopt multi-task training to strengthen task-role comprehension, and employ a hard-mixture curriculum that leverages semantically similar acoustic mixtures during fine-tuning to enhance fine-grained source discrimination.
+                <p>Visual object removal can eliminate a target from video frames, yet the target’s acoustic trace persists in the soundtrack, causing noticeable audio-visual inconsistency. Existing video inpainting models operate solely on pixels, while audio editing models, especially for the sound removal task, are typically text-driven and suffer from limited unimodal control, which is less effective than multimodal guidance that provides richer semantic grounding and temporal synchronization cues. 
+                   We present Text-Visual Guided Sound Removal (\textbf{TV-AudioRemover}), a target sound removal framework that leverages natural-language instructions and optional visually edited videos to suppress the sound of the removed visual object from the original audio mixture. 
+                   (1) To obtain high-quality training data, we design a pipeline to build a million-scale dataset of single-object audio-visual aligned samples, from which we synthesize mixture-target pairs tailored for model training. 
+                   (2) To effectively exploit visual context and faithfully follow instruction intent, we augment the model architecture with task tokens, generalizable instruction modeling, and modality-specific global guidance. 
+                   (3) We further adopt multi-task training to strengthen task-role understanding, together with a hard-mixture curriculum that employs semantically similar acoustic mixtures during fine-tuning to enhance fine-grained source discrimination.
                    Beyond visually edited videos, the same selective sound-removal capability can support off-screen voice-over or narration cleanup, text-guided audio-only editing, and soundtrack-only removal of an in-frame sound from an otherwise unedited video.
                 </p>
             </div>
@@ -732,14 +732,14 @@
                 <p>We propose TV-AudioRemover, a text‑visual guided sound removal model.
                 The key contributions of TV-AudioRemover are as follows.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>A high-quality data construction pipeline.</strong></p>
-                <p style="padding-left:1.5em;">It generates million-scale single-object audio-video aligned samples and synthesizes task-specific mixture-target pairs for target removal from these samples.</p>
+                <p style="padding-left:1.5em;">It generates million-scale single-object audio-visual-aligned samples and synthesizes task-specific mixture-target pairs for training.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>A modality-decoupled audio editing architecture.</strong></p>
-                <p style="padding-left:1.5em;">With task tokens and global modal guidance, the model effectively distinguishes preservable and suppressible audio under joint visual-textual conditions.</p>
+                <p style="padding-left:1.5em;">With task tokens and global modality guidance, the model effectively distinguishes preservable and suppressible audio under joint visual-textual conditions.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>A multi-task curriculum training strategy.</strong></p>
-                <p style="padding-left:1.5em;">Combined multi-task supervision and two-stage curriculum learning enhances task understanding and fine-grained acoustic discrimination capacity.</p>
+                <p style="padding-left:1.5em;">Combined multi-task supervision and two-stage curriculum learning enhance task understanding and fine-grained acoustic discrimination.</p>
                 <p style="padding-left:1.5em;">&#8226; <strong>AV-Remove-Bench.</strong></p>
-                <p style="padding-left:1.5em;">The first audio-visual target removal benchmark with comprehensive scene diversity and broad acoustic coverage, equipped with two removal-specific metrics introduced in this work—Target Source Suppression Ratio (TSSR) and Preserved Source Fidelity (PSF)—and an MLLM-based evaluation protocol.</p>
-                <p>Extensive experiments demonstrate that TV-AudioRemover achieves state-of-the-art performance on both subjective and objective metrics. </p>
+                <p style="padding-left:1.5em;">An audio-visual target removal benchmark with rich scene diversity and broad acoustic coverage, equipped with two removal-specific metrics introduced in this work—Target Source Suppression Ratio (TSSR) and Preserved Source Fidelity (PSF)—and an MLLM-based evaluation protocol.</p>
+                <p>Experiments demonstrate that our method achieves state-of-the-art performance on both subjective and objective metrics for text-only-guided and text-visual-guided audio removal tasks. </p>
             </div>
             <div class="image-gallery">
                 <div class="image-box">
@@ -1945,20 +1945,25 @@
             <div id="perf-tab-objective" class="perf-tab">
                 <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                     <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                        <p>We compare TV-AudioRemover with three categories of models on the AV-Remove-Bench: joint audio-visual editing models (AVI-Edit, InstructAV2AV); text-guided audio editing models (ZETA, Audio-Omni, UNISON); and video- and text-guided audio extraction model (SAM Audio).</p>
+                        <p>The evaluation datasets consist of two parts: a removal subset of 50 samples from MMAE, an open-source text-guided audio editing benchmark, and our proposed text-visual-guided sound removal benchmark AV-Remove-Bench. 
+                           We compare TV-AudioRemover with three categories of models on the AV-Remove-Bench: joint audio-visual editing models (AVI-Edit, InstructAV2AV); text-guided audio editing models (ZETA, Audio-Omni, UNISON); and video- and text-guided audio extraction model (SAM Audio, MMAudioSep).
+                           For the MMAE removal subset, we only evaluate the sound removal performance of audio-only editing models under pure text guidance.</p>
                     </div>
                     <div style="text-align:center;">
-                        <img src="Figs/objective.png" alt="objective" style="border:none; outline:none; box-shadow:none; padding:0; max-width:90%; height:auto;">
+                        <img src="Figs/objective1.png" alt="objective1" style="border:none; outline:none; box-shadow:none; padding:0; max-width:90%; height:auto;">
+                    </div>
+                    <div style="text-align:center;">
+                        <img src="Figs/objective2.png" alt="objective2" style="border:none; outline:none; box-shadow:none; padding:0; max-width:90%; height:auto;">
                     </div>
                     <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                        <p>TV-AudioRemover achieves state-of-the-art performance across almost all objective metrics.</p>
+                        <p>TV-AudioRemover achieves state-of-the-art performance for text-only-guided and text-visual-guided audio removal tasks.</p>
                     </div>
                 </div>
             </div>
             <div id="perf-tab-subjective" class="perf-tab" style="display:none;">
                     <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                     <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
-                        <p>We further conduct a human listening evaluation on the AV-Remove-Bench to compare against the baseline models.</p>
+                        <p>We further conduct a human listening evaluation on AV-Remove-Bench to compare our method with the baseline models.</p>
                     </div>
                     <div style="text-align:center;">
                         <img src="Figs/subjective.png" alt="subjective" style="border:none; outline:none; box-shadow:none; padding:0; max-width:70%; height:auto;">
@@ -2132,7 +2137,10 @@
             <div style="background:#ffffff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08); padding:20px 25px;">
                 <div class="text-box" style="box-shadow:none; border:none; padding:0; margin-bottom:20px;">
                     <p>We propose AV-Remove-Bench, a comprehensive audio-visual object removal benchmark with 77 samples. All samples are audio-visual clips of about six seconds, covering speech, music, and sound effects.
-                       Each sample falls into either a multi-sounding-object setting or a foreground-target-plus-stable-background setting, and the goal is to remove a specified sounding object from both the visual and audio streams.</p>
+                       Each sample falls into either a multi-sounding-object setting or a foreground-target-plus-stable-background setting, and the goal is to remove a specified sounding object from both the visual and audio streams. The data distribution is visualized below.</p>
+                </div>
+                <div style="text-align:center;">
+                        <img src="Figs/fig3.png" alt="av-remove-bench" style="border:none; outline:none; box-shadow:none; padding:0; max-width:70%; height:auto;">
                 </div>
             </div>
         </section>
